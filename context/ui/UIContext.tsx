@@ -1,10 +1,14 @@
 import { createContext } from 'react';
 
-export interface UIContextContextProps {
-    sidemenuOpen:boolean,
-    openSidemenu:()=>void
-    closeSidemenu:()=>void
+export interface UIContextProps {
+    sidemenuOpen: boolean
+    isDragging:boolean
+    openSidemenu: () => void
+    closeSidemenu: () => void
+
+    startDragging: () => void
+    endDragging: () => void
 }
 
-export const UIContext = createContext({} as UIContextContextProps)
+export const UIContext = createContext({} as UIContextProps)
 
