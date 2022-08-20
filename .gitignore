@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+mongo/
 # dependencies
 /node_modules
 /.pnp
@@ -14,6 +15,10 @@
 
 # production
 /build
+
+# seed
+/database/seed-data.ts
+/pages/api/seed.ts
 
 # misc
 .DS_Store

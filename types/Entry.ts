@@ -2,6 +2,7 @@ export type EntriesActionType =
 |{ type: '[Entries] - ActionName'}
 |{ type: '[Entries] - Add New Entry'} & EntriesAction<Entry>
 |{ type: '[Entries] - Update Entry'} & EntriesAction<Omit<Entry,'createAt '>>
+|{ type: '[Entries] - Loading Entries'} & EntriesAction<Entry[]>
 export type EntriesAction<T> = { payload:T }
 export type EntriesState = {
   entries: Entry[]

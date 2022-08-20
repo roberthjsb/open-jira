@@ -1,4 +1,4 @@
-import { EntriesAction, EntriesActionType, EntriesState } from "../../types/Entry";
+import { EntriesActionType, EntriesState } from "../../types/Entry";
 
 const entriesReducer = (state: EntriesState, action: EntriesActionType): EntriesState => {
   switch (action.type) {
@@ -11,12 +11,20 @@ const entriesReducer = (state: EntriesState, action: EntriesActionType): Entries
     case '[Entries] - Update Entry': {
       return {
         ...state,
-        entries: state.entries.map(ent => { const { status, description, _id } = action.payload;
-                                            if (ent._id === _id){
-                                              ent = { ...ent, description, status }
-                                            }
-                                            return ent;
-                                          })
+        entries: state.entries.map(ent => {
+          const { status, description, _id } = action.payload;
+          if (ent._id === _id) {
+            ent = { ...ent, description, status }
+          }
+          return ent;
+        })
+      }
+    }
+    case '[Entries] - Loading Entries': {
+      debugger
+      return {
+        ...state,
+        entries: [...action.payload]
       }
     }
     default:
