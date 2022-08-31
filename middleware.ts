@@ -9,7 +9,7 @@ export function middleware(req: NextRequest) {
   if (req.nextUrl.pathname.startsWith('/api/entries/')) {
     const id = req.nextUrl.pathname.replace('/api/entries/', '')
     const checkMongoIdRegexp = new RegExp('^[0-9a-fA-F]{24}$');
-    if (checkMongoIdRegexp.test(id)) {
+    if (!checkMongoIdRegexp.test(id)) {
       const url = req.nextUrl.clone();
       url.pathname = '/api/bad-request';
       url.search = `?message=${id}is not valid MongoID`;

@@ -9,7 +9,6 @@ export interface UIState {
 }
 
 export const UIReducer = (state: UIState, action: UIActionType): UIState => {
-    debugger
     console.log(action, state)
     switch (action.type) {
         case 'UI - Open Sidebar':

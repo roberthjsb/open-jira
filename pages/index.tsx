@@ -1,6 +1,5 @@
-import { Grid, CardHeader, Card, CardContent } from '@mui/material'
+import { Grid, CardHeader, Card } from '@mui/material'
 import type { NextPage } from 'next'
-import { useContext } from 'react'
 import { Layout } from '../components/layouts/Layout'
 import { EntryList } from '../components/ui/EntryList'
 import { NewEntry } from '../components/ui/NewEntry'
